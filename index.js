@@ -6,6 +6,11 @@ client.on("ready", () => {
 console.log(`${client.user.username} is Online')
 })
 
+const commandFiles = fs.readdirSync('./commands/')
+for(const file of commandFiles) {
+  const command = require(`./commands/${file}`)
+  client.commands.set(command.name, command)
+}
 
 client.on('message', message => {
   if(!message.guild || message.author.bot || !message.content.startsWith(prefix)) return;
