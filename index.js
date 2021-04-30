@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const prefix = "!" // change your prefix
 
 client.on("ready", () => {
-console.log(`${client.user.username} is Online')
+console.log(`${client.user.username} is Online`)
 })
 
 const commandFiles = fs.readdirSync('./commands/')
